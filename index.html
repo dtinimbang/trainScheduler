@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <title>Train Scheduler</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+   
+
+    <!-- Moment.js Reference -->
+    <script src="http://momentjs.com/downloads/moment.js"></script>  
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  
+  </head>
+
+  <body>
+
+  
+
+    <!-- Employee Tracker -->
+    <div class="container">
+
+      <!-- Jumbotron -->
+      <div class="jumbotron" style="background-color: rgb(108, 135, 255); color: black">
+        <h1 class="text-center">Train Scheduler</h1>
+        <h3 class="text-center">by: Don Michael Tinimbang</h3>
+        <div class="hero-circle">
+                <div class="hero-face">
+                    <div id="hour" class="hero-hour"></div>
+                    <div id="minute" class="hero-minute"></div>
+                    <div id="second" class="hero-second"></div>
+                </div>
+            </div>
+      </div>
+
+      <div class="row">
+
+        <div class="col-lg-12">
+
+        <!-- Current Employees-->
+          <div class="panel panel-primary" style="background-color: rgb(255, 0, 0); color: black">
+            <div class="panel-heading">
+              <h3 class="panel-title"><strong>Current Schedule</strong></h3>
+            </div>
+            <div class="panel-body">
+              <table class="table table-hover" id='employee-table'>
+                <thead>
+                  <tr>
+                    <th>Train Name</th>
+                    <th>Destination</th>
+                    <th>First Train(military time)</th>
+                    <th>Freq(min)</th>
+                    <th>Next arrival</th>
+                    <th>Min Away</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Add Employee  -->
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title"><strong>Add Train</strong></h3>
+            </div>
+            <div class="panel-body">
+
+              <!-- Entry Form -->
+              <form>
+                <div class="form-group">
+                  <label for="train-name-input">Train Name</label>
+                  <input class="form-control" id="train-name-input" type="text">
+                </div>
+                <div class="form-group">
+                  <label for="dest-input">Destination</label>
+                  <input class="form-control" id="destination-input" type="text">
+                </div>
+
+                <div class="form-group">
+                  <label for="time-input">First Train Time (hh:mm am/pm)</label>
+                  <input class="form-control" id="time-input" type="text">
+                </div>
+                
+                <div class="form-group">
+                  <label for="freq-input">Freq(Min)</label>
+                  <input class="form-control" id="freq-input" type="text">
+                </div>
+          
+                <button class="btn btn-primary" id="add-info-btn" type="submit">Submit</button>
+              </form>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script src="assets/javascript/app.js"></script>
+    <link rel='stylesheet' href = 'assets/css/style.css'>
+
+
+  </body>
+
+</html>
