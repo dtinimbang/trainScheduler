@@ -75,35 +75,38 @@ database.ref().on("child_added", function (childSnapshot, prevChildKey) {
     var trnFreq = childSnapshot.val().freq;
 
     // Train Info
-    console.log(trnName);
-    console.log(trnDestination);
-    console.log(trnTime);
-    console.log(trnFreq);
+    // console.log(trnName);
+    // console.log(trnDestination);
+    // console.log(trnTime);
+    // console.log(trnFreq);
 
 
 
+
+
+
+    var differenceTimes = moment().diff(moment.unix(trnTime), "minutes");
+	var tRemainder = moment().diff(moment.unix(trnTime), "minutes") % trnFreq;
+	var tMinutes = trnFreq - tRemainder;
+
+
+    	// To calculate the arrival time, add the tMinutes to the currrent time
+	var tArrival = moment().add(tMinutes, "m").format("hh:mm A"); 
+	//console.log(tMinutes);
+    //console.log(tArrival);
+    
 
     var dt = moment(trnTime, ["hh:mm A"]).format("HH:mm");
-    console.log(dt);
+    // console.log(dt);
 
     var firstTimeConverted = moment(dt).add(trnFreq);
-    console.log(firstTimeConverted);
-
-    // Difference between the times
-    // var diffTime = moment().diff(moment(firstTimeConverted), "minutes");
-    // console.log("DIFFERENCE IN TIME: " + diffTime);
-
-    // it will add 11 mins in the current time and will give time in 03:35 PM format
-    //var travelTime = moment(dt).add(trnfreq).format('HH:mm');
-    //console.log(travelTime);
+    // console.log(firstTimeConverted);
 
 
-    $("#employee-table > tbody").append("<tr><td>" + trnName + "</td><td>" + trnDestination + "</td><td>" + dt + "</td><td>" + trnFreq + "</td>");
 
 
-    // Add each train's data into the table
-    // $("#employee-table > tbody").append("<tr><td>" + empName + "</td><td>" + empRole + "</td><td>" +
-    // empStartPretty + "</td><td>" + empMonths + "</td><td>" + empRate + "</td><td>" + empBilled + "</td></tr>");
+    $("#employee-table > tbody").append("<tr><td>" + trnName + "</td><td>" + trnDestination + "</td><td>" + dt + "</td><td>" + trnFreq + "</td><td>" + tArrival + "</td><td>" + tMinutes + "</td></tr>");
+
 
 // sets the clock on the main page
     $(function () {
