@@ -102,8 +102,8 @@ database.ref().on("child_added", function (childSnapshot, prevChildKey) {
     var firstTimeConverted = moment(dt).add(trnFreq);
     // console.log(firstTimeConverted);
 
-
-
+console.log(tArrival);
+console.log(tMinutes);
 
     $("#employee-table > tbody").append("<tr><td>" + trnName + "</td><td>" + trnDestination + "</td><td>" + dt + "</td><td>" + trnFreq + "</td><td>" + tArrival + "</td><td>" + tMinutes + "</td></tr>");
 

@@ -1,6 +1,6 @@
 body {
 
-	background-image: url("../images/train.jpg");
+	background-image: url("../images/train1.jpg");
 	background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -85,7 +85,7 @@ body {
   }
 
   form{
-    background-color: white
+    background-color: rgb(194, 194, 194)
   }
 
   .jumbotron{
